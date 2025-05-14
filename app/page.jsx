@@ -9,6 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { BookOpen, FileText, Calculator, ChevronRight, Download, Play, BookMarked, FileQuestion } from "lucide-react"
 import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
+import { Gamepad2 } from "lucide-react"
+import React, { useEffect } from "react";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("inicio")
@@ -58,14 +60,23 @@ export default function Home() {
                 <BookMarked className="mr-2 h-4 w-4" />
                 Tercer Corte
               </Button>
+              <Button
+                  variant={activeSection === "minijuego" ? "default" : "outline"}
+                  className="w-full justify-start"
+                  onClick={() => setActiveSection("minijuego")}
+              >
+                <Gamepad2 className="mr-2 h-4 w-4" />
+                Mini Juego
+              </Button>
             </nav>
           </div>
-
           <div className="md:col-span-3">
             {activeSection === "inicio" && <InicioSection />}
             {activeSection === "primer-corte" && <PrimerCorteSection />}
             {activeSection === "segundo-corte" && <SegundoCorteSection />}
             {activeSection === "tercer-corte" && <TercerCorteSection />}
+            {activeSection === "minijuego" && <MiniJuegoSection />}
+
           </div>
         </div>
       </main>
@@ -736,5 +747,31 @@ function TercerCorteSection() {
         </TabsContent>
       </Tabs>
     </div>
+  )
+}
+
+function MiniJuegoSection() {
+  // Redirigir automáticamente al enlace de Scratch
+  // Se puede usar useEffect para la redirección automática
+  React.useEffect(() => {
+    window.location.href = "https://scratch.mit.edu/projects/1174765468"
+  }, [])
+
+  // En caso de que la redirección automática falle, mostrar botón y mensaje
+  return (
+      <div className="flex flex-col items-center justify-center min-h-[250px]">
+        <Gamepad2 className="h-14 w-14 text-blue-500 mb-4 animate-bounce" />
+        <h2 className="text-2xl font-bold mb-2 text-center">Mini Juego Interactivo</h2>
+        <p className="mb-4 text-slate-600 text-center">
+          Estás siendo redirigido automáticamente al mini juego. <br />
+          Si la redirección no funciona, haz clic en el botón de abajo.
+        </p>
+        <Button asChild variant="outline" className="flex items-center gap-2">
+          <a href="https://scratch.mit.edu/projects/1091905020" target="_blank" rel="noopener noreferrer">
+            <Gamepad2 className="h-5 w-5" />
+            Ir al Mini Juego
+          </a>
+        </Button>
+      </div>
   )
 }
