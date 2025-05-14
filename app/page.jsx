@@ -282,36 +282,31 @@ function PrimerCorteSection() {
                       <p>El dato oficial para 2008 es <strong>49.05 millones</strong>, lo que significa que el modelo tuvo un <strong>error del 0% </strong> en este periodo.
                         Este resultado demuestra la eficacia del modelo exponencial en lapsos cortos donde las condiciones se mantienen estables.</p>
 
-                    <h3 className="text-lg font-semibold mt-4 mb-1">Ejemplo Resuelto</h3>
+                    <h3 className="text-lg font-semibold mt-4 mb-1">Limitaciones y Consideraciones</h3>
                     <p>
-                      Resolver <span className="font-mono">dy/dx = x*y</span>:
+                      A pesar de su precisión, el modelo tiene limitaciones:
                     </p>
                     <ul className="list-disc ml-6">
-                      <li>Separar variables: <span className="font-mono">dy/y = x dx</span></li>
-                      <li>Integrar ambos lados: <span className="font-mono">ln|y| = x²/2 + C</span></li>
-                      <li>Despejar: <span className="font-mono">y = Ce<sup>x²/2</sup></span></li>
+                      <li><strong>Tasa Constante:</strong> Asume que <InlineMath math="k:"/> no cambia con el tiempo, lo que rara vez ocurre en la realidad debido
+                        a factores económicos, migratorios o sanitarios.</li>
+                      <li><strong>Recursos Infinitos:</strong> Ignora la capacidad de carga del entorno, un componente clave en modelos más avanzados como el logístico.</li>
+                      <li><strong>Eventos Imprevistos:</strong>  No considera crisis repentinas, como recesiones o pandemias, que pueden alterar drásticamente las tendencias.</li>
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-4">
-                  <AccordionTrigger>Aplicaciones</AccordionTrigger>
+                  <AccordionTrigger>Conclusión y Próximos Pasos</AccordionTrigger>
                   <AccordionContent>
-                    <h3 className="text-lg font-semibold mt-2 mb-1">Problemas clásicos</h3>
-                    <ul className="list-disc ml-6">
-                      <li><span className="font-medium">Mezclas:</span> Concentración de soluciones en tanques.</li>
-                      <li><span className="font-medium">Crecimiento poblacional:</span> Modelo exponencial y logístico.</li>
-                      <li><span className="font-medium">Circuitos eléctricos:</span> Comportamiento de corriente y voltaje en circuitos RL, RC.</li>
-                      <li><span className="font-medium">Trayectorias ortogonales:</span> Cálculo de curvas ortogonales a familias dadas.</li>
-                    </ul>
-
-                    <h3 className="text-lg font-semibold mt-4 mb-1">Ejemplo de crecimiento poblacional</h3>
-                    <p>
-                      El modelo más simple es <span className="font-mono">dy/dt = ky</span>, donde <span className="font-mono">k</span> es la tasa de crecimiento.<br/>
-                      Solución general: <span className="font-mono">y(t) = y<sub>0</sub> e<sup>kt</sup></span>                    </p>
+                    <h3 className="text-lg font-semibold mt-2 mb-1">Reflexión Final</h3>
+                      <p>El modelo exponencial es una piedra angular en el estudio de dinámicas poblacionales. Su simplicidad lo hace ideal para introducir
+                        conceptos matemáticos complejos, pero también revela la importancia de considerar variables adicionales en análisis más profundos.
+                        En el próximo corte, exploraremos cómo extender este modelo para incluir factores como migración y envejecimiento poblacional, acercándonos
+                        aún más a la realidad demográfica de Corea del Sur.</p>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+
             </CardContent>
             <CardFooter>
               <Button className="transition-all duration-200 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-blue-600 hover:text-white active:scale-95 focus:ring-4 focus:ring-blue-300">
@@ -322,6 +317,7 @@ function PrimerCorteSection() {
           </Card>
         </TabsContent>
 
+        .
         <TabsContent value="ejercicios" className="space-y-4 mt-4">
           <Card>
             <CardHeader>
@@ -331,32 +327,11 @@ function PrimerCorteSection() {
             <CardContent>
               <div className="space-y-4">
                 <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                  <h4 className="font-medium mb-2">Ejercicio 1: Ecuaciones Separables</h4>
-                  <p className="text-slate-600 mb-2">Resuelve la ecuación diferencial: dy/dx = xy²</p>
-                  <Button variant="outline" size="sm">
-                    <Play className="mr-2 h-3 w-3" />
-                    Ver Solución
-                  </Button>
-                </div>
-
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                  <h4 className="font-medium mb-2">Ejercicio 2: Ecuaciones Lineales</h4>
-                  <p className="text-slate-600 mb-2">Resuelve la ecuación: dy/dx + P(x)y = Q(x)</p>
-                  <Button variant="outline" size="sm">
-                    <Play className="mr-2 h-3 w-3" />
-                    Ver Solución
-                  </Button>
-                </div>
-
-                <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                  <h4 className="font-medium mb-2">Juego: Clasificación de Ecuaciones</h4>
-                  <p className="text-slate-600 mb-2">
-                    Identifica el tipo de ecuación diferencial y el método de solución apropiado.
+                  <h4 className="font-medium mb-2">Quiz Interactivo</h4>
+                  <p className="text-slate-600 mb-4">
+                    Pon a prueba tus conocimientos respondiendo la siguiente pregunta de opción múltiple sobre el modelo de crecimiento exponencial.
                   </p>
-                  <Button variant="outline" size="sm">
-                    <Play className="mr-2 h-3 w-3" />
-                    Iniciar Juego
-                  </Button>
+                  <MultipleChoiceQuiz />
                 </div>
               </div>
             </CardContent>
@@ -368,8 +343,160 @@ function PrimerCorteSection() {
             </CardFooter>
           </Card>
         </TabsContent>
+        ```
+
       </Tabs>
     </div>
+  )
+}
+
+
+
+export function MultipleChoiceQuiz() {
+  // Las preguntas y respuestas
+  const preguntas = [
+    {
+      pregunta: 'Entre 2001 y 2004, la población de Corea del Sur aumentó de 47.37 a 48.09 millones. ¿Cuál de las siguientes ecuaciones representa el modelo de crecimiento exponencial correcto?',
+      opciones: [
+        { id: 'a', texto: <span><InlineMath math="P(t) = 47.37 + 0.24t" /></span> },
+        { id: 'b', texto: <span><InlineMath math="P(t) = 47.37 \cdot e^{kt}" /></span> },
+        { id: 'c', texto: <span><InlineMath math="P(t) = 47.37 \cdot kt" /></span> }
+      ],
+      respuestaCorrecta: "b",
+      explicacion: (
+          <ol className="list-decimal pl-6 space-y-1 text-slate-700">
+            <li>El modelo de crecimiento exponencial sigue la fórmula <InlineMath math="P(t) = P_0 e^{kt}" />.</li>
+            <li>El crecimiento lineal sería <InlineMath math="P(t) = P_0 + at" />.</li>
+            <li>Por eso, la opción <strong>b</strong> es la correcta.</li>
+          </ol>
+      )
+    },
+    {
+      pregunta: 'Si la tasa de crecimiento es <InlineMath math="k = 0.006"/> anual, ¿cómo se expresa el cambio de población respecto al tiempo (<InlineMath math="\\frac{dP}{dt}" />)?',
+      opciones: [
+        { id: 'a', texto: <span><InlineMath math="\\frac{dP}{dt} = 0.006 t" /></span> },
+        { id: 'b', texto: <span><InlineMath math="\\frac{dP}{dt} = 0.006 P" /></span> },
+        { id: 'c', texto: <span><InlineMath math="\\frac{dP}{dt} = P^2 + 0.006" /></span> }
+      ],
+      respuestaCorrecta: "b",
+      explicacion: (
+          <ol className="list-decimal pl-6 space-y-1 text-slate-700">
+            <li>En el crecimiento exponencial, la variación es proporcional a la población actual: <InlineMath math="\\frac{dP}{dt} = kP" />.</li>
+            <li>Sustituyendo <InlineMath math="k = 0.006" />, queda <InlineMath math="\\frac{dP}{dt} = 0.006 P" />.</li>
+          </ol>
+      )
+    },
+    {
+      pregunta: 'En 2006, una crisis reduce la tasa anual a 0.2%. ¿Cuál de estas ecuaciones representa esa situación?',
+      opciones: [
+        { id: 'a', texto: <span><InlineMath math="P(t) = P_0 \\, e^{0.002t}" /></span> },
+        { id: 'b', texto: <span><InlineMath math="P(t) = P_0 \\, e^{0.2t}" /></span> },
+        { id: 'c', texto: <span><InlineMath math="P(t) = P_0 \\, e^{-0.2t}" /></span> }
+      ],
+      respuestaCorrecta: "a",
+      explicacion: (
+          <ol className="list-decimal pl-6 space-y-1 text-slate-700">
+            <li>Una tasa del 0.2% equivale a <InlineMath math="k = 0.002" /> en el modelo exponencial (<InlineMath math="r = 0.2/100 = 0.002" />).</li>
+            <li>Por eso, la ecuación es <InlineMath math="P(t) = P_0 e^{0.002t}" />.</li>
+          </ol>
+      )
+    }
+  ]
+
+  // Estado para seguir el avance en el quiz
+  const [preguntaActual, setPreguntaActual] = useState(0)
+  const [seleccionada, setSeleccionada] = useState(null)
+  const [enviado, setEnviado] = useState(false)
+  const [mostrarSolucion, setMostrarSolucion] = useState(false)
+  const [aciertos, setAciertos] = useState(0)
+
+  const actual = preguntas[preguntaActual]
+
+  function handleEnviar() {
+    setEnviado(true)
+    if (seleccionada === actual.respuestaCorrecta) {
+      setAciertos(a => a + 1)
+    }
+  }
+
+  function handleSiguiente() {
+    setEnviado(false)
+    setMostrarSolucion(false)
+    setSeleccionada(null)
+    setPreguntaActual(idx => idx + 1)
+  }
+
+  // Si ya no hay más preguntas:
+  if (preguntaActual >= preguntas.length) {
+    return (
+        <div>
+          <h4 className="font-medium mb-2">Resultado del quiz</h4>
+          <p className="mb-3">Respuestas correctas: <b>{aciertos}</b> de {preguntas.length}</p>
+          <Button variant="secondary" onClick={() => {
+            setPreguntaActual(0)
+            setAciertos(0)
+          }}>
+            Reintentar Quiz
+          </Button>
+        </div>
+    )
+  }
+
+  // Si hay pregunta actual:
+  return (
+      <div>
+        <h4 className="font-medium mb-2">Pregunta {preguntaActual + 1} de {preguntas.length}</h4>
+        <div className="mb-4">{actual.pregunta}</div>
+        <div className="grid gap-2 mb-4">
+          {actual.opciones.map((op) => (
+              <Button
+                  key={op.id}
+                  variant={seleccionada === op.id ? "default" : "outline"}
+                  className="justify-start text-left"
+                  onClick={() => setSeleccionada(op.id)}
+                  disabled={enviado}
+              >
+                <span className="font-bold mr-2 uppercase">{op.id}.</span>
+                {op.texto}
+              </Button>
+          ))}
+        </div>
+        {!enviado ? (
+            <Button
+                onClick={handleEnviar}
+                disabled={!seleccionada}
+                className="mt-2"
+            >
+              Enviar respuesta
+            </Button>
+        ) : (
+            <div className="space-y-3">
+              <p className={seleccionada === actual.respuestaCorrecta ? "text-green-600 font-bold" : "text-red-600 font-bold"}>
+                {seleccionada === actual.respuestaCorrecta
+                    ? "¡Respuesta correcta!"
+                    : `Incorrecto. La opción correcta es "${actual.respuestaCorrecta.toUpperCase()}".`}
+              </p>
+              <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setMostrarSolucion(s => !s)}
+                  className="mt-1"
+              >
+                {mostrarSolucion ? "Ocultar explicación" : "Ver explicación"}
+              </Button>
+              {mostrarSolucion && (
+                  <div className="bg-gray-50 border rounded-lg p-4 mt-2">{actual.explicacion}</div>
+              )}
+              <Button
+                  onClick={handleSiguiente}
+                  className="mt-2"
+                  variant="secondary"
+              >
+                {preguntaActual + 1 === preguntas.length ? "Finalizar" : "Siguiente"}
+              </Button>
+            </div>
+        )}
+      </div>
   )
 }
 
