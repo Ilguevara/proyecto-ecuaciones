@@ -86,7 +86,7 @@ function InicioSection() {
 
       <p className="text-slate-600">
         Este sitio ha sido diseñado como un recurso educativo interactivo para estudiantes del curso de Ecuaciones Diferenciales.
-        Aquí encontrarás lo que necesitas para aprender y reforzar los temas más importantes de la asignatura, de forma clara, divertida y dinámica.
+        Aquí encontrarás todo lo que necesitas para aprender y reforzar los temas más importantes de la asignatura, de forma clara, divertida y dinámica.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -356,48 +356,63 @@ export function MultipleChoiceQuiz() {
   // Las preguntas y respuestas
   const preguntas = [
     {
-      pregunta: 'Entre 2001 y 2004, la población de Corea del Sur aumentó de 47.37 a 48.09 millones. ¿Cuál de las siguientes ecuaciones representa el modelo de crecimiento exponencial correcto?',
+      pregunta: <>
+        <strong>1. Calculando la Tasa de Crecimiento: </strong>
+        Entre 2001 y 2004, la población de Corea del Sur aumentó de 47.37 a 48.09 millones.
+        ¿Cuál es la tasa de crecimiento anual (<InlineMath math="k" />)?
+      </>,
+
       opciones: [
-        { id: 'a', texto: <span><InlineMath math="P(t) = 47.37 + 0.24t" /></span> },
-        { id: 'b', texto: <span><InlineMath math="P(t) = 47.37 \cdot e^{kt}" /></span> },
-        { id: 'c', texto: <span><InlineMath math="P(t) = 47.37 \cdot kt" /></span> }
+        { id: 'a', texto: <span><InlineMath math="0.3%" /></span> },
+        { id: 'b', texto: <span><InlineMath math="0.8%" /></span> },
+        { id: 'c', texto: <span><InlineMath math="0.1%" /></span> },
+        { id: 'd', texto: <span><InlineMath math="0.5%" /></span> }
       ],
-      respuestaCorrecta: "b",
+      respuestaCorrecta: "d",
       explicacion: (
           <ol className="list-decimal pl-6 space-y-1 text-slate-700">
-            <li>El modelo de crecimiento exponencial sigue la fórmula <InlineMath math="P(t) = P_0 e^{kt}" />.</li>
-            <li>El crecimiento lineal sería <InlineMath math="P(t) = P_0 + at" />.</li>
-            <li>Por eso, la opción <strong>b</strong> es la correcta.</li>
+            <p>Explicación Paso a Paso</p>
+            <li> <strong>Fórmula</strong> <InlineMath math="k = \frac{\ln \frac{P}{P_0}}{t}"/> donde <InlineMath math="P_0 = 47.37~\text{millones (poblacion en 2001)}
+            \text{,} ~  P = 48.09 ~\text{millones (poblacion en 2004)} ~ \text{y} ~ t = 2004 - 2001 = 3 ~ \text{años}  "/>  </li>
+            <li> <strong>Interpretación</strong> una tasa del <InlineMath math="0.5%" significa que dicha población crece un esta cifra cada año />.</li>
           </ol>
       )
     },
     {
-      pregunta: 'Si la tasa de crecimiento es <InlineMath math="k = 0.006"/> anual, ¿cómo se expresa el cambio de población respecto al tiempo (<InlineMath math="\\frac{dP}{dt}" />)?',
+      pregunta: <>
+            <strong>2. Simulando un Escenario Extremo: </strong>
+              Simulando un Escenario Extremo (<InlineMath math="k = 0.006 o 0.6%" />, ¿cuál sería la población en 2008? )?
+          </>,
       opciones: [
-        { id: 'a', texto: <span><InlineMath math="\\frac{dP}{dt} = 0.006 t" /></span> },
-        { id: 'b', texto: <span><InlineMath math="\\frac{dP}{dt} = 0.006 P" /></span> },
-        { id: 'c', texto: <span><InlineMath math="\\frac{dP}{dt} = P^2 + 0.006" /></span> }
+        { id: 'a', texto: <span><InlineMath math="48.9 ~ \text{millones}" /></span> },
+        { id: 'b', texto: <span><InlineMath math="49.05 ~ \text{millones}" /></span> },
+        { id: 'c', texto: <span><InlineMath math="49.5 ~ \text{millones}" /></span> },
+        { id: 'd', texto: <span><InlineMath math="47.09 ~ \text{millones}" /></span> }
       ],
-      respuestaCorrecta: "b",
+      respuestaCorrecta: "c",
       explicacion: (
           <ol className="list-decimal pl-6 space-y-1 text-slate-700">
-            <li>En el crecimiento exponencial, la variación es proporcional a la población actual: <InlineMath math="\\frac{dP}{dt} = kP" />.</li>
-            <li>Sustituyendo <InlineMath math="k = 0.006" />, queda <InlineMath math="\\frac{dP}{dt} = 0.006 P" />.</li>
+            <li><strong>Fórmula: </strong> <InlineMath math="P(t) = p_0 \cdot e^kt " /> donde (<InlineMath math="P_0 = 47.37 ~ \text{millones} ~ k = 0.006 ~\text{y}~ t = 7 ~ \text{años}  " />).</li>
+            <li><strong>Cálculo: </strong> <InlineMath math="P(7) = 47.37 \cdot e^0.042 ≈ 47.37 \cdot 1.043 ≈ 49.5 ~ \text{millones}  " />.</li>
           </ol>
       )
     },
     {
-      pregunta: 'En 2006, una crisis reduce la tasa anual a 0.2%. ¿Cuál de estas ecuaciones representa esa situación?',
+      pregunta: <>
+        <strong>3. Crisis Económica (¡Desafío Final!) </strong>
+        SEn 2006, una crisis reduce la tasa anual a (<InlineMath math="0.2%" />, ¿cuál sería la población en 2008? )?
+      </>,
       opciones: [
-        { id: 'a', texto: <span><InlineMath math="P(t) = P_0 \\, e^{0.002t}" /></span> },
-        { id: 'b', texto: <span><InlineMath math="P(t) = P_0 \\, e^{0.2t}" /></span> },
-        { id: 'c', texto: <span><InlineMath math="P(t) = P_0 \\, e^{-0.2t}" /></span> }
+        { id: 'a', texto: <span><InlineMath math="47.9 ~ \text{millones} " /></span> },
+        { id: 'b', texto: <span><InlineMath math="48.47 ~ \text{millones}" /></span> },
+        { id: 'c', texto: <span><InlineMath math="49.0 ~ \text{millones}" /></span> },
+        { id: 'd', texto: <span><InlineMath math="49.1 ~ \text{millones}" /></span> }
       ],
-      respuestaCorrecta: "a",
+      respuestaCorrecta: "b",
       explicacion: (
           <ol className="list-decimal pl-6 space-y-1 text-slate-700">
-            <li>Una tasa del 0.2% equivale a <InlineMath math="k = 0.002" /> en el modelo exponencial (<InlineMath math="r = 0.2/100 = 0.002" />).</li>
-            <li>Por eso, la ecuación es <InlineMath math="P(t) = P_0 e^{0.002t}" />.</li>
+            <li><strong>Sin crisis (2001-2005): </strong> <InlineMath math="P(4) = 47.37 \cdot e^{0.0043 \cdot 4} ≈ 48.18 ~ \text{millones}  " /> en el modelo exponencial (<InlineMath math="r = 0.2/100 = 0.002" />).</li>
+            <li> <strong>Con crisis (2005-2008): </strong>  <InlineMath math="P(3) = 48.18 \cdot e^{0.002 \cdot 3} ≈ 48.47 ~ \text{millones} " /> <strong>¡Increíble! </strong>La crisis subestima la población real (49.05M) en 0.58 millones.</li>
           </ol>
       )
     }
