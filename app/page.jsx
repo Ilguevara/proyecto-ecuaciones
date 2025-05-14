@@ -86,7 +86,7 @@ function InicioSection() {
 
       <p className="text-slate-600">
         Este sitio ha sido diseñado como un recurso educativo interactivo para estudiantes del curso de Ecuaciones Diferenciales.
-        Aquí encontrarás todo lo que necesitas para aprender y reforzar los temas más importantes de la asignatura, de forma clara, divertida y dinámica.
+        Aquí encontrarás lo que necesitas para aprender y reforzar los temas más importantes de la asignatura, de forma clara, divertida y dinámica.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
