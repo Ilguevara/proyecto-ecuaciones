@@ -202,16 +202,44 @@ function InicioSection() {
 function PrimerCorteSection() {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold">Modelando el crecimiento poblacional: Primer Corte (2001-2008)</h2>
+      <h2 className="text-2xl font-bold">Modelando el crecimiento poblacional: Primer Corte (2001-2021)</h2>
 
       <p className="text-slate-600">
-        Entre 2001 y 2008, Corea del Sur experimentó un aumento poblacional de 47.37 a 49.05 millones de personas.
-        Este crecimiento, aunque modesto, sigue un patrón que puede ser modelado con herramientas matemáticas simples
-        pero poderosas: las ecuaciones diferenciales. En este primer corte, exploraremos cómo una ecuación exponencial,
-        derivada de principios básicos del cálculo, logra predecir con exactitud este comportamiento. Acompáñanos a desglosar
-        cada paso, desde la teoría hasta la aplicación práctica, y descubre por qué este modelo es fundamental para entender
-        no solo a Corea del Sur, sino cualquier fenómeno de crecimiento en la naturaleza y la sociedad.
+        La tabla que se presenta a continuación contiene datos estadísticos relevantes sobre la población total de Corea del Sur,
+        abarcando un período de 20 años, desde el 2001 hasta el 2021. El objetivo de esta selección de 20 registros es analizar
+        la dinámica de la población surcoreana a lo largo de este lapso temporal y, posteriormente, realizar cálculos basados en esta información.
       </p>
+
+      <div className="aspect-video relative flex justify-center">
+        <Image
+            src="/materials/DatosPoblacion.png"
+            alt="Crecimiento Poblacional"
+            width={800}
+            height={400}
+            className="object-contain"
+        />
+      </div>
+
+      <h3 className="text-lg font-bold">Identificación de Variables: Tiempo y Población</h3>
+      <p className="text-slate-600">Dentro de este conjunto de datos, podemos distinguir claramente dos tipos de variables: la <strong>variable independiente</strong>
+        y la <strong>variable dependiente</strong></p>
+      <ul  className="list-disc list-inside text-slate-600">
+
+        <li ><strong>Variable Independiente: El Tiempo</strong> El tiempo es la variable que consideramos como factor causal o predictivo de los cambios en la población.
+          En esta tabla, el tiempo se representa de dos maneras complementarias:</li> <p className="mt-2.5">Donde la primera, la columna "t", representa el número de trimestres
+          transcurridos desde el inicio del período de estudio, es decir, desde 2001, donde cada unidad corresponde a un trimestre (tres meses). Por ejemplo, un valor de 0
+          indica el inicio de 2001, mientras que un 3 señala el final del primer trimestre de 2002, permitiendo un seguimiento secuencial y detallado del avance temporal.
+          La segunda, la columna "Año", señala el año calendario correspondiente a cada registro de población, ofreciendo así una referencia temporal clara e intuitiva que
+          facilita la comprensión del período al que pertenece cada dato.</p>
+
+        <li className="mt-3"><strong>Variable Dependiente: Población Total</strong> La "Población Total" es la variable dependiente, ya que su valor se espera que cambie o
+          evolucione en respuesta al paso del tiempo. Los números en esta columna representan la cantidad total de habitantes en Corea del Sur en el momento específico indicado
+          por las columnas "t" y "Año". Al observar los valores de la "Población Total" a lo largo de los diferentes puntos temporales, podemos analizar la tendencia de crecimiento,
+          decrecimiento o estabilidad de la población durante el período estudiado.</li> <p className="mt-2.5">En resumen, la tabla ilustra cómo la población total de Corea del Sur
+          ha variado a lo largo del tiempo, medido en trimestres desde 2001 y referenciado por el año calendario. El análisis de estos datos nos permitirá comprender mejor la dinámica
+          demográfica del país durante estas dos décadas.</p>
+
+      </ul>
 
       <Tabs defaultValue="temas">
         <TabsList className="grid w-full grid-cols-2">
@@ -228,29 +256,63 @@ function PrimerCorteSection() {
             <CardContent>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>Introducción a las Ecuaciones Diferenciales</AccordionTrigger>
+                  <AccordionTrigger>Modelado de la población</AccordionTrigger>
                     <AccordionContent>
-                      <h3 className="text-lg font-semibold mt-2 mb-1">¿Qué Son y Por Qué Son Importantes?</h3>
+                      <h3 className="text-lg font-semibold mt-2 mb-1">Análisis de Parejas de Datos Clave de la Población de Corea del Sur</h3>
                         <p>
-                          Las ecuaciones diferenciales son herramientas matemáticas que relacionan una función con sus derivadas.
-                          En términos simples, describen cómo una cantidad cambia en función de otra variable, usualmente el tiempo.
-                          Por ejemplo, si queremos modelar el crecimiento de una población, necesitamos una ecuación que conecte el
-                          número de personas en un año específico <InlineMath math="(P)"/> con la rapidez con
-                          que este número aumenta o disminuye {' '} <InlineMath math="\frac{dP}{dt}" />.
-                        </p>
-                      <h3 className="text-lg font-semibold mt-2 mb-1">El Modelo Exponencial: La Base del Crecimiento</h3>
-                        <p className="mb-6">El modelo más sencillo para describir poblaciones es el <strong>crecimiento exponencial</strong>, representado
-                        por la ecuación:</p ><p className="flex justify-center mb-6"> <InlineMath math="\frac{dP}{dt} = kP"/>.</p>
-                        <p>
-                          Aquí, <InlineMath math="k" />, es la <span className="italic `font-serif`=">tasa de crecimiento per cápita</span>
-                          un valor constante que indica el porcentaje anual de aumento. Esta ecuación supone que los recursos son ilimitados
-                          y que no hay factores externos (como migración o políticas públicas) afectando el crecimiento. Aunque simplificado,
-                          este modelo es sorprendentemente preciso para periodos cortos y estables, como el caso de Corea del Sur entre 2001 y 2008.</p>
+                          La siguiente tabla presenta cinco pares de datos específicos extraídos del conjunto de datos de la población de Corea del Sur.
+                          Cada par ilustra la relación entre el tiempo (medido en trimestres desde 2001 y el año correspondiente) y la población total
+                          en momentos particulares. Estos pares de datos nos permiten observar puntos concretos en la evolución demográfica del país
+                          durante el período comprendido.</p>
+
+                      <div className="aspect-video relative flex justify-center">
+                        <Image
+                            src="/materials/ParejaDatos.png"
+                            alt="Crecimiento Poblacional"
+                            width={500}
+                            height={300}
+                            className="object-contain"
+                        />
+                      </div>
+
+                      <h3 className="text-lg font-semibold mt-2 mb-1">Interpretación de las Columnas: </h3>
+
+                      <ul  className="list-disc list-inside">
+                        <li className="mb-4"><InlineMath math="t: "/> Como en la tabla anterior, esta columna representa el número de trimestres transcurridos desde el inicio del año 2001.
+                          Cada valor indica un punto específico en el tiempo.</li>
+
+                        <li className="mb-4"><InlineMath math="\text{Año (pareja 1) y población (pareja 1): }"/> Estas dos columnas forman el primer conjunto de cinco pares de datos.
+                          Para cada valor de <InlineMath math="t"/> mostrado a la izquierda, se indica el año correspondiente y la población total registrada en ese momento.
+                          Por ejemplo, cuando <InlineMath math="t(0), "/> nos encontramos en el año 2001 con una población de 47.370.000 habitantes.</li>
+
+                        <li className="mb-4"><InlineMath math="\text{Año (pareja 2) y población (pareja 2): }"/> De manera similar, estas columnas constituyen el segundo conjunto de cinco pares de datos.
+                          Para el mismo valor de <InlineMath math="t"/>e la fila, se presenta un año diferente y la población total asociada a ese año. Por ejemplo, para el mismo punto
+                          de inicio <InlineMath math="t(0), "/>  el segundo par de datos nos muestra el año 2004 con una población de 48.083.000 habitantes.</li>
+                      </ul>
+
+                      <h3 className="text-lg font-semibold mt-2 mb-1">Análisis de los Pares de Datos: </h3>
+
+                        <p className="mb-4">Cada fila de la tabla nos ofrece dos instantáneas de la población en diferentes momentos. Al comparar la "Población (Pareja 1)"
+                          con la "Población (Pareja 2)" para cada valor de <InlineMath math="t,"/> podemos observar cómo la población ha cambiado entre esos dos puntos temporales específicos. Por ejemplo: </p>
+
+                      <ul  className="list-disc list-inside">
+                        <li className="mb-4"><InlineMath math="t: "/> Como en la tabla anterior, esta columna representa el número de trimestres transcurridos desde el inicio del año 2001.
+                          Cada valor indica un punto específico en el tiempo.</li>
+
+                        <li className="mb-4"><InlineMath math="\text{Año (pareja 1) y población (pareja 1): }"/> Estas dos columnas forman el primer conjunto de cinco pares de datos.
+                          Para cada valor de <InlineMath math="t"/> mostrado a la izquierda, se indica el año correspondiente y la población total registrada en ese momento.
+                          Por ejemplo, cuando <InlineMath math="t(0), "/> nos encontramos en el año 2001 con una población de 47.370.000 habitantes.</li>
+
+                        <li className="mb-4"><InlineMath math="\text{Año (pareja 2) y población (pareja 2): }"/> De manera similar, estas columnas constituyen el segundo conjunto de cinco pares de datos.
+                          Para el mismo valor de <InlineMath math="t"/>e la fila, se presenta un año diferente y la población total asociada a ese año. Por ejemplo, para el mismo punto
+                          de inicio <InlineMath math="t(0), "/>  el segundo par de datos nos muestra el año 2004 con una población de 48.083.000 habitantes.</li>
+                      </ul>
+
                     </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2">
-                  <AccordionTrigger>Resolviendo la Ecuación Diferencial</AccordionTrigger>
+                  <AccordionTrigger>Análisis del Modelo de Población</AccordionTrigger>
                     <AccordionContent>
                       <h3 className="text-lg font-semibold mt-2 mb-1"> Paso a paso de la solución</h3>
                       <ol className="list-decimal ml-6 space-y-3">
@@ -282,7 +344,7 @@ function PrimerCorteSection() {
                   </AccordionItem>
 
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>Aplicación Práctica: Predicción para 2008</AccordionTrigger>
+                  <AccordionTrigger>Aplicación del Modelo</AccordionTrigger>
                   <AccordionContent>
                     <h3 className="text-lg font-semibold mt-2 mb-1">Usando el Modelo</h3>
                       <p>Con <InlineMath math="P_0 = 47.37~\text{millones} ~\text{y} ~  k = 0.0043"/> predecimos la poblacion en 2008 <InlineMath math="(t = 7):"/></p>
@@ -307,7 +369,7 @@ function PrimerCorteSection() {
                 </AccordionItem>
 
                 <AccordionItem value="item-4">
-                  <AccordionTrigger>Conclusión y Próximos Pasos</AccordionTrigger>
+                  <AccordionTrigger>Conclusiones del primer corte</AccordionTrigger>
                   <AccordionContent>
                     <h3 className="text-lg font-semibold mt-2 mb-1">Reflexión Final</h3>
                       <p>El modelo exponencial es una piedra angular en el estudio de dinámicas poblacionales. Su simplicidad lo hace ideal para introducir
