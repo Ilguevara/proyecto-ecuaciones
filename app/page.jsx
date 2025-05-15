@@ -1010,7 +1010,7 @@ function SegundoCorteSection() {
                           </div>
                           <div className="w-2/3 aspect-video relative flex justify-center">
                             <Image
-                                src="/materials/Pareja1_2.png"
+                                src="/materials/pareja1_2.png"
                                 alt="Crecimiento Poblacional"
                                 width={400}
                                 height={200}
@@ -1033,7 +1033,7 @@ function SegundoCorteSection() {
                           </div>
                           <div className="w-2/3 aspect-video relative flex justify-center">
                             <Image
-                                src="/materials/Pareja2_2.png"
+                                src="/materials/pareja2_2.png"
                                 alt="Crecimiento Poblacional"
                                 width={400}
                                 height={200}
