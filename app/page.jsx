@@ -1648,7 +1648,7 @@ function TercerCorteSection() {
                 </AccordionItem>
 
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>Transformada de Laplace con la ecuacion Logistica y Conclusiones </AccordionTrigger>
+                  <AccordionTrigger>Transformada de Laplace con la ecuacion Logistica  </AccordionTrigger>
                   <AccordionContent>
                     <div className="space-y-6">
                       <h2 className="text-2xl font-bold">Resolviendo la Ecuación Logística con la Transformada de Laplace: Pareja 1 de Datos</h2>
@@ -1862,7 +1862,7 @@ function TercerCorteSection() {
                 </AccordionItem>
 
                 <AccordionItem value="item-4">
-                  <AccordionTrigger>Solucion de parejas en gráficos</AccordionTrigger>
+                  <AccordionTrigger>Solucion de parejas en gráficos y Conclusiones</AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-6">
                       <li className="flex flex-row items-center gap-6">
